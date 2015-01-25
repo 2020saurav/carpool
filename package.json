@@ -1,0 +1,22 @@
+{
+  "name": "carpool",
+  "version": "0.0.0",
+  "description": "Carpooling system for campus",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:2020saurav/carpool.git"
+  },
+  "keywords": [
+    "carpool"
+  ],
+  "author": "Saurav Kumar",
+  "license": "None",
+  "bugs": {
+    "url": "https://github.com/2020saurav/carpool/issues"
+  },
+  "homepage": "https://github.com/2020saurav/carpool"
+}
