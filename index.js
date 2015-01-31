@@ -1,7 +1,21 @@
-var http = require('http');
+var express = require('express');
 var app = express();
-app.set('port', process.env.PORT||3000);
+var routes = require('./routes');
+var path = require('path');
 
-http.createServer(app).listen(app.get('port'), function() {
-    console.log('Express server listening on port ' + app.get('port'));
+
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'jade');
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.get('/', function (req, res) {
+    res.render('index');
+});
+
+var server = app.listen(3000, function () {
+
+    var port = server.address().port;
+
+    console.log('Example app listening at http://localhost:%s', port)
+
 });

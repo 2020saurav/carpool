@@ -21,6 +21,7 @@
   "homepage": "https://github.com/2020saurav/carpool",
     "dependencies" :
     {
-        "express" : "4.x"
+        "express" : "4.x",
+        "jade" : "*"
     }
 }
