@@ -1,0 +1,21 @@
+extends layout
+block content
+	div.col-md-offset-3.col-md-6
+		table
+			tr
+				td To City
+				td From City
+			-for value in values
+				tr
+					td #{value.to} 
+					td #{value.from}
+				br
+	div.col-md-offset-3.col-md-6
+		form(method='post', action='/postTravel')
+			div.form-group
+				label To City
+				input.form-control(type="text" name="toCity" placeholder="To City")
+				label From City
+				input.form-control(type="text" name="fromCity" placeholder="From City")
+				
+				button.btn.btn-success(type="submit") Submit

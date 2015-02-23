@@ -11,6 +11,7 @@ var sequelize = new Sequelize(config.database, config.username, config.password,
 // load models
 var models = [
     'users',
+    'travel',
 ];
 
 models.forEach(function(model) {

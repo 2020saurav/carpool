@@ -4,6 +4,7 @@ var userModel = model.sequelize.models.users;
 
 module.exports = function(req, res)
 {
+    // console.log(req);
     var firstName = req.body.firstName;
     userModel.create({
         "first_name" : firstName
