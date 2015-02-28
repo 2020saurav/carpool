@@ -4,6 +4,7 @@ var userModel = model.sequelize.models.users;
 
 module.exports = function(req, res)
 {
+    // console.log(req);
     var firstName = req.body.firstName;
     var middleName = req.body.middleName;
     var lastName = req.body.lastName;

@@ -15,8 +15,18 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.get('/', function (req, res) {
     res.render('index');
 });
-app.post('/', function(req, res) {
+app.post('/', function (req, res) {
    routes.testDBpost(req, res);
+});
+app.get('/travel', function (req, res) {
+	routes.testTravel(req, res);
+});
+app.post('/postTravel', function (req, res) {
+	routes.testTravelPost(req, res);
+});
+
+app.get("/test", function(req,res) {
+    routes.test(req,res);
 });
 
 http.createServer(app).listen(app.get('port'), function() {
