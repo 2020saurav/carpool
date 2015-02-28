@@ -10,7 +10,7 @@ var sequelize = new Sequelize(config.database, config.username, config.password,
 
 // load models
 var models = [
-    'user', 'journey' , 'passengers', 'status', 'request', 'places'
+    'user' , 'passengers', 'status', 'request', 'places'
 ];
 
 models.forEach(function(model) {
