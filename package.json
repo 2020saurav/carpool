@@ -23,8 +23,9 @@
     {
         "express" : "4.x",
         "jade" : "*",
-        "sequelize": "2.0",
-        "mysql": "*",
-        "body-parser": "*"
+        "sequelize" : "2.0",
+        "mysql" : "*",
+        "body-parser" : "*",
+        "express-session" : "*"
     }
 }
