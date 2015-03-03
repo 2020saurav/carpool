@@ -10,15 +10,19 @@ var sequelize = new Sequelize(config.database, config.username, config.password,
 
 // load models
 var models = [
-    'user',
+    'journey',
+    'passenger',
+    'place',
+    'request',
+    'user'
 ];
 
 models.forEach(function(model) {
     module.exports[model] = sequelize.import(__dirname + '/' + model);
 });
 
-//sequelize.sync({force:true})
 // create tables in db if not exist:
+//sequelize.sync({force:true})
 sequelize.sync()
 // force true will drop table.
 
