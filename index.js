@@ -34,7 +34,6 @@ app.post('/postTravel', function (req, res) {
 	routes.testTravelPost(req, res);
 })
 
-
 app.get('/login', function (req, res) {
     routes.login(req, res);
 })
@@ -43,7 +42,13 @@ app.post('/postLogin', function (req, res) {
     routes.postLogin(req, res);
 })
 
+app.get('/registration', function (req, res) {
+    routes.registration(req, res);
+})
 
+app.post('/postRegistration', function (req, res) {
+    routes.postRegistration(req, res);
+})
 
 
 http.createServer(app).listen(app.get('port'), function() {
