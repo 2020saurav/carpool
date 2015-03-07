@@ -22,7 +22,15 @@ app.use(session({
 
 
 app.get('/', function (req, res) {
-    res.render('index', {"session": req.session});
+    routes.search(req, res);
+});
+
+app.get('/search', function (req, res) {
+    routes.search(req, res);
+});
+
+app.post('/search', function (req, res) {
+    routes.postSearch(req, res);
 });
 
 app.get('/login', function (req, res) {

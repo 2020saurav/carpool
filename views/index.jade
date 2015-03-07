@@ -1,19 +1,23 @@
 extends layout
 block content
     div.col-md-offset-3.col-md-6
-        form
-        form(method='post', action='')
+        ul
+        -for city in cities
+            li #{city.id} #{city.name}
+        //TODO Use this to build the following form. Use city id as value and display city name in text
+
+        form(method='post', action='/search')
             div.form-group
             label(for="from") From
             select.form-control(name='from')
-                option(value='0') IITK
-                option(value='1') Kanpur CNB
+                option(value='1') IITK
+                option(value='2') Kanpur CNB
             br
             br
             label(for="to") To
-            select.form-control(name='from')
-                option(value='0') IITK
-                option(value='1') Kanpur CNB
+            select.form-control(name='to')
+                option(value='1') IITK
+                option(value='2') Kanpur CNB
             br
             br
             button.btn.btn-success(type="submit") Submit
