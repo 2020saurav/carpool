@@ -24,15 +24,6 @@ app.use(session({
 app.get('/', function (req, res) {
     res.render('index', {"session": req.session});
 });
-app.post('/', function (req, res) {
-   routes.testDBpost(req, res);
-});
-app.get('/travel', function (req, res) {
-	routes.testTravel(req, res);
-});
-app.post('/postTravel', function (req, res) {
-	routes.testTravelPost(req, res);
-});
 
 app.get('/login', function (req, res) {
     routes.login(req, res);
@@ -48,7 +39,16 @@ app.get('/register', function (req, res) {
 
 app.post('/postRegister', function (req, res) {
     routes.postRegister(req, res);
-})
+});
+
+app.get('/logout/', function(req,res) {
+    req.session.destroy(function(err){
+        if(err)
+            console.log(err);
+        else
+            res.redirect('/');
+    })
+});
 
 
 http.createServer(app).listen(app.get('port'), function() {
