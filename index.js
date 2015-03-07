@@ -29,25 +29,25 @@ app.post('/', function (req, res) {
 });
 app.get('/travel', function (req, res) {
 	routes.testTravel(req, res);
-})
+});
 app.post('/postTravel', function (req, res) {
 	routes.testTravelPost(req, res);
-})
+});
 
 app.get('/login', function (req, res) {
     routes.login(req, res);
-})
+});
 
 app.post('/postLogin', function (req, res) {
     routes.postLogin(req, res);
-})
+});
 
-app.get('/registration', function (req, res) {
-    routes.registration(req, res);
-})
+app.get('/register', function (req, res) {
+    routes.register(req, res);
+});
 
-app.post('/postRegistration', function (req, res) {
-    routes.postRegistration(req, res);
+app.post('/postRegister', function (req, res) {
+    routes.postRegister(req, res);
 })
 
 
