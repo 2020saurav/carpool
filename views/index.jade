@@ -1,4 +1,19 @@
 extends layout
 block content
     div.col-md-offset-3.col-md-6
-       p #{session.firstName}
+        form
+        form(method='post', action='')
+            div.form-group
+            label(for="from") From
+            select.form-control(name='from')
+                option(value='0') IITK
+                option(value='1') Kanpur CNB
+            br
+            br
+            label(for="to") To
+            select.form-control(name='from')
+                option(value='0') IITK
+                option(value='1') Kanpur CNB
+            br
+            br
+            button.btn.btn-success(type="submit") Submit
