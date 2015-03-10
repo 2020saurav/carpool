@@ -4,17 +4,17 @@
 extends layout
 block content
     div.col-md-offset-3.col-md-6
-        form(method='post', action='/')
+        form(method='post', action='/postRegistration')
             div.form-group
                 label First Name
-                input.form-control(type="text" name="first_name" placeholder="First Name")
+                input.form-control(type="text" name="firstName" placeholder="First Name")
                 label Last Name
-                input.form-control(type="text" name="last_name" placeholder="Last Name")
+                input.form-control(type="text" name="lastName" placeholder="Last Name")
                 label Gender
                 input.form-control(type="text" name="gender" placeholder="Gender")
                 label Photo URL
-                input.form-control(type="text" name="photo_url" placeholder="Photo")
-                label Mobile Number
+                input.form-control(type="text" name="photoUrl" placeholder="Photo")
+                label Contact
                 input.form-control(type="text" name="contact" placeholder="Mobile No.")
                 label Email Id
                 input.form-control(type="text" name="email" placeholder="Email")
@@ -24,11 +24,6 @@ block content
                 input.form-control(type="text" name="login" placeholder="Username")
                 label Password
                 input.form-control(type="password" name="password" placeholder="Password")
-                // label confirm is incomplete
-
                 //label Confirm Password
-                //input.form-control(type="text" name="" placeholder="Confirm Password")
-
-
-
+                //input.form-control(type="password" name="password2" placeholder="Confirm Password")
                 button.btn.btn-success(type="submit") Submit
