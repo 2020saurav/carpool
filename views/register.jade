@@ -1,10 +1,7 @@
-//
-   Created by pawan on 4/3/15.
-
 extends layout
 block content
     div.col-md-offset-3.col-md-6
-        form(method='post', action='/postRegistration')
+        form(method='post', action='/postRegister')
             div.form-group
                 label First Name
                 input.form-control(type="text" name="firstName" placeholder="First Name")
@@ -13,8 +10,8 @@ block content
                 label Gender
                 input.form-control(type="text" name="gender" placeholder="Gender")
                 label Photo URL
-                input.form-control(type="text" name="photoUrl" placeholder="Photo")
-                label Contact
+                input.form-control(type="text" name="photoURL" placeholder="Photo")
+                label Mobile Number
                 input.form-control(type="text" name="contact" placeholder="Mobile No.")
                 label Email Id
                 input.form-control(type="text" name="email" placeholder="Email")
@@ -24,6 +21,8 @@ block content
                 input.form-control(type="text" name="login" placeholder="Username")
                 label Password
                 input.form-control(type="password" name="password" placeholder="Password")
-                //label Confirm Password
-                //input.form-control(type="password" name="password2" placeholder="Confirm Password")
+                label Confirm Password
+                input.form-control(type="password" name="password2" placeholder="Confirm Password")
+                br
+                br
                 button.btn.btn-success(type="submit") Submit
