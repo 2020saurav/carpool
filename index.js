@@ -49,6 +49,14 @@ app.post('/postRegister', function (req, res) {
     routes.postRegister(req, res);
 });
 
+app.get('/journey', function (req, res) {
+    routes.journey(req, res);
+});
+
+app.post('/postJourney', function (req, res) {
+    routes.postJourney(req, res);
+});
+
 app.get('/logout/', function(req,res) {
     req.session.destroy(function(err){
         if(err)

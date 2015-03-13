@@ -6,3 +6,6 @@ exports.postRegister = require("./postRegister");
 
 exports.search = require('./search');
 exports.postSearch = require('./postSearch');
+
+exports.journey = require('./journey');
+exports.postJourney = require('./postJourney');
