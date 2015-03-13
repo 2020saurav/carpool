@@ -53,7 +53,7 @@ module.exports = function(req, res) {
                 }
                 else
                 {
-                    // TODO error
+                    res.redirect("/register?errorinsession");
                     console.log(u)
                 }
             });
