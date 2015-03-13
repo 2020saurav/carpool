@@ -15,8 +15,8 @@ module.exports = function(req, res) {
     }
     userModel.find({
         where: {
-            login: login
-            // TODO add email condition using OR
+             login: login,email : email
+
         }
     }).then(function (user) {
 
