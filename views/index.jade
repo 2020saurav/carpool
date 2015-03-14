@@ -6,9 +6,9 @@ block content
             li #{city.id} #{city.name}
         //TODO Use this to build the following form. Use city id as value and display city name in text
 
-        form(method='post', action='/search'
+        form(method='post', action='/search')
             div.form-group
-            label(for="from") From)
+            label(for="from") From
             select.form-control(name='from')
                 option(value='1') IITK
                 option(value='2') Kanpur CNB
