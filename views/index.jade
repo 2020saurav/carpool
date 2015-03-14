@@ -15,9 +15,9 @@ block content
             br
             br
             label(for="to") To
-            select.form-control(name='from')
+            select.form-control(name='to')
                 -for city in cities
-                    option(value='#{city.id}') #{city.name}{city.id}') #{city.name}
+                    option(value='#{city.id}') #{city.name}
             br
             br
             button.btn.btn-success(type="submit") Submit

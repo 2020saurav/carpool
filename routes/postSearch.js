@@ -6,10 +6,11 @@ var placeModel = model.sequelize.models.place;
 module.exports = function(req, res) {
     var toCityId = req.body.to;
     var fromCityId = req.body.from;
-
+    console.log(toCityId)
+    console.log(fromCityId);
     if(toCityId==fromCityId)
     {
-        // TODO complete this
+        res.send("Please select different source or destination. Same source and destination is not admitted");
     }
 
     var toCity="";
@@ -22,6 +23,7 @@ module.exports = function(req, res) {
         if(city)
         {
             toCity = city.name;
+
             placeModel.findOne({
                 where : {
                     "id" : fromCityId
@@ -29,16 +31,26 @@ module.exports = function(req, res) {
             }).then(function(city){
                 if(city)
                 {
+                    //console.log(city);
                     fromCity = city.name;
                     // now both to and from city names are available : may use to display.
                     // use IDs to search in journey table
-                    res.send("You want to go from " + fromCity + " to "+toCity);
+                    //res.send("You want to go from " + fromCity + " to "+toCity);
                     // TODO : now call journeyModel.findAll where to AND from city IDs match and get all such rows
                     // pass the results to searchresult.jade . In searchresult.jade, keep a for loop to unroll the journies.
-                }
+                    journeyModel.findAll({
+                        where : {
+                            "source" : fromCityId,
+                            "destination" : toCityId
+                        }
+                    }).then(function(city)
+                    {
+                        res.render("searchresult");
+                    }
+                )}
                 else
                 {
-                    res.send("City does not exist");
+                    res.send("From City does not exist");
                 }
             });
         }
