@@ -13,15 +13,15 @@ module.exports = function(req, res) {
     {
         res.redirect("/register?error=PasswordsDoNotMatch")
     }
-    userModel.find({          //is this correct......????
-        where: Sequelize.and(
-            {login: login},
-            Sequelize.or(  {email :email})
+    userModel.find({
+        where: Sequelize.or(
+            {login : login},
+            {email : email}
     )
     }).then(function (user) {
 
         if(user) {
-            res.redirect("/register?error=LoginAlreadyExists");
+            res.redirect("/register?error=LoginOrEmailAlreadyExists");
             // TODO attach the form data back to autofill the form.
         }
         else
