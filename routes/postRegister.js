@@ -37,10 +37,11 @@ module.exports = function(req, res) {
                     "email" : req.body.email,
                     "contact" : req.body.contact,
                     "facebook" : "getThisValue",
+                                                // TODO
                     "hall" : req.body.hall,
                     "is_active" : true
                 }
-            ).then(function(u) {
+            ).then( function(u) {
                 if(u)
                 {
                     // if successfully entered data in database, set session.
