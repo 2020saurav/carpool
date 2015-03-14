@@ -13,11 +13,11 @@ module.exports = function(req, res) {
     {
         res.redirect("/register?error=PasswordsDoNotMatch")
     }
-    userModel.find({
-        where: {
-             login: login,email : email
-
-        }
+    userModel.find({          //is this correct......????
+        where: Sequelize.and(
+            {login: login},
+            Sequelize.or(  {email :email})
+    )
     }).then(function (user) {
 
         if(user) {
