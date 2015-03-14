@@ -3,19 +3,28 @@
  */
 var model = require('../models/index');
 
-var userModel = model.sequelize.models.user;
+var journeyModel = model.sequelize.models.journey;
 
 module.exports = function(req, res) {
     var source = req.body.source;
     var destination = req.body.destination;
-    if(source==destination)
+    if(!req.session.userId)
     {
-        res.redirect("/journey?error=Please Enter correct source and destination")
+        res.redirect("/login");
     }
-    else{
-            userModel.create({
+    else
+    {
+        if(source==destination)
+        {
+            res.redirect("/journey?error=Please Enter correct source and destination")
+        }
+        else
+        {
+            journeyModel.create({
+                    "creator_id": req.session.userId,
                     "source" : req.body.source,
                     "destination" : req.body.destination,
+                    "departure_time":10000, // TODO get this value
                     "mode" : req.body.mode,
                     "max_capacity" : req.body.maxCapacity,
                     "other_info" : req.body.otherInfo,
@@ -26,18 +35,8 @@ module.exports = function(req, res) {
             ).then( function(u) {
                     if(u)
                     {
-                        // if successfully entered data in database, set session.
-                        req.session.userId = u.id;
-                        req.session.journeyId = u.journey_id;
-                        req.session.source = u.source;
-                        res.session.destination = u.destination;
-                        res.session.mode = u.mode;
-                        res.session.maxCapacity = u.max_capacity;
-                        res.session.totalFare = u.total_fare;
-                        res.session.gatheringPlace = u.gathering_place;
-                        res.session.isBooked = u.is_booked;
-                        res.session.otherInfo = u.other_info;
-                        res.redirect("/");
+                        // TODO show confirmation message
+                        res.redirect("/?success=confirm");
                     }
                     else
                     {
@@ -46,5 +45,6 @@ module.exports = function(req, res) {
                     }
                 });
         }
-    };
+    }
+};
 
