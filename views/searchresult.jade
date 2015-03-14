@@ -5,5 +5,25 @@ extends layout
 block content
     div.container
         -for result in results
-            div.box-shadow(style="padding:2px 15px;")
-                h4 #{result.mode}
+            div.box-shadow.row
+                div.col-md-1
+                    img.row(src="http://placehold.it/50x60")
+                    h4.row #{result.mode}
+                    h4.row Booked
+                div.col-md-11
+                    div.row
+                        h5.col-md-6 Name of the Creator
+                        h4.col-md-3 Date
+                        h4.col-md-3 Time
+                    div.row
+                        p Gathering Place
+                    div.row
+                        h4.col-md-3 Source
+                        h4.col-md-3 Destn
+                    div.row
+                        h4 Passengers
+                    div.row
+                        h4 Other Info
+                    div.row
+                        button.btn.btn-success.pull-right Request to Join
+
