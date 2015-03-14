@@ -43,9 +43,9 @@ module.exports = function(req, res) {
                             "source" : fromCityId,
                             "destination" : toCityId
                         }
-                    }).then(function(city)
+                    }).then(function(cities)
                     {
-                        res.render("searchresult");
+                        res.render("searchresult", {"session": req.session, "results" : cities});
                     }
                 )}
                 else
