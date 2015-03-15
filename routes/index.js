@@ -9,3 +9,8 @@ exports.postSearch = require('./postSearch');
 
 exports.journey = require('./journey');
 exports.postJourney = require('./postJourney');
+
+exports.request = require('./request');
+exports.postRequest = require('./postRequest');
+
+exports.pendingRequests = require('./pendingRequests');

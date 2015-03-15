@@ -2,7 +2,7 @@
  * Created by pawan on 4/3/15.
  */
 var model = require('../models/index');
-
+var Sequelize = require('sequelize');
 var userModel = model.sequelize.models.user;
 
 module.exports = function(req, res) {
@@ -16,7 +16,7 @@ module.exports = function(req, res) {
     userModel.find({
         where: Sequelize.or(
             {login : login},
-            {email : email}
+            {email : req.body.email}
     )
     }).then(function (user) {
 

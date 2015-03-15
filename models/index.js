@@ -13,7 +13,6 @@ var models = [
     'journey',
     'passenger',
     'place',
-    'request',
     'user'
 ];
 

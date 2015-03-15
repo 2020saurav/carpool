@@ -57,6 +57,18 @@ app.post('/postJourney', function (req, res) {
     routes.postJourney(req, res);
 });
 
+app.get('/request', function (req, res){
+    routes.request(req, res);
+});
+
+app.post('/postRequest', function (req, res){
+    routes.postRequest(req, res);
+});
+
+app.get('/requests', function (req, res){
+    routes.pendingRequests(req, res);
+});
+
 app.get('/logout/', function(req,res) {
     req.session.destroy(function(err){
         if(err)
