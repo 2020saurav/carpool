@@ -1,5 +1,24 @@
 extends layout
 block content
-    div.col-md-offset-3.col-md-6
+    div.container
         -for passenger in passengers
-           p #{passenger.user.first_name}
+            div.box-shadow.row
+                div.col-md-1
+                    img.row(src="http://placehold.it/50x60")
+                div.col-md-11
+                    div.row
+                        h4.col-md-6 Name of Requester
+                        h4.col-md-3 Date
+                        h4.col-md-3 Time
+                    div.row
+                        h4.col-md-3 Source
+                        h4.col-md-3 Destination
+                    div.row
+                        h5 Gathering Place
+                    div.row
+                        h4 Message
+                    div.row
+                        //a.btn.btn-success.pull-right(href="/request?jid=#{result.id}") Request to Join
+                        button.btn.btn-success.pull-right Confirm
+                        button.btn.btn-success.pull-right Ignore
+        //p #{passenger.user.first_name}
