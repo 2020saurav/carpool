@@ -6,8 +6,6 @@ var placeModel = model.sequelize.models.place;
 module.exports = function(req, res) {
     var toCityId = req.body.to;
     var fromCityId = req.body.from;
-    console.log(toCityId)
-    console.log(fromCityId);
     if(toCityId==fromCityId)
     {
         res.send("Please select different source or destination. Same source and destination is not admitted");
