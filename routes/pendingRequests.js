@@ -4,7 +4,10 @@ var passengerModel = model.sequelize.models.passenger;
 var journeyModel = model.sequelize.models.journey;
 
 userModel.hasMany(passengerModel, {foreignKey:"user_id"});
-passengerModel.belongsTo(userModel,{foreignKey:"user_id"})
+passengerModel.belongsTo(userModel,{foreignKey:"user_id"});
+
+journeyModel.hasMany(passengerModel, {foreignKey:"journey_id"});
+passengerModel.belongsTo(journeyModel,{foreignKey:"journey_id"});
 
 var PENDING = 0;
 var CONFIRMED = 1;
@@ -32,7 +35,8 @@ module.exports = function(req, res) {
                     journey_id : jIds
                 },
                 include:[
-                    {model : userModel}
+                    {model : userModel},
+                    {model : journeyModel}
                 ]
             }).then(function (passengers) {
                 if(passengers)
@@ -44,7 +48,7 @@ module.exports = function(req, res) {
                             pendingPassengers.push(passengers[p])
                         }
                     }
-//                    res.send(passengers)
+//                    res.send(pendingPassengers);
                     res.render("pendingRequests",{"session" : req.session, "passengers":pendingPassengers})
                 }
                 else
