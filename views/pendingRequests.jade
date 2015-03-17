@@ -4,19 +4,19 @@ block content
         -for passenger in passengers
             div.box-shadow.row
                 div.col-md-1
-                    img.row(src="http://placehold.it/50x60")
+                    img.row(src="passenger.user.photo_url")
                 div.col-md-11
+                   div.row
+                        h4.col-md-6 Name of Requester : #{passenger.user.first_name}
+                        h4.col-md-3 Date : #{passenger.journey.date}
+                        h4.col-md-3 Time : #{passenger.journey.time}
                     div.row
-                        h4.col-md-6 Name of Requester
-                        h4.col-md-3 Date
-                        h4.col-md-3 Time
+                         h4.col-md-3 Source : #{passenger.journey.source}
+                         h4.col-md-3 Destination : #{passenger.journey.destination}
                     div.row
-                        h4.col-md-3 Source
-                        h4.col-md-3 Destination
+                        h5 Gathering Place : #{passenger.journey.gathering_place}
                     div.row
-                        h5 Gathering Place
-                    div.row
-                        h4 Message
+                        h4 Message : #{passenger.passenger.message}
                     div.row
                         button.btn.btn-success.pull-right Confirm
                         button.btn.btn-success.pull-right Ignore
