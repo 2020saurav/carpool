@@ -26,6 +26,7 @@
         "sequelize" : "2.0",
         "mysql" : "*",
         "body-parser" : "*",
-        "express-session" : "*"
+        "express-session" : "*",
+        "moment" : "*"
     }
 }

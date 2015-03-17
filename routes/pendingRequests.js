@@ -1,4 +1,6 @@
 var model = require('../models/index');
+var moment = require('moment');
+
 var userModel = model.sequelize.models.user;
 var passengerModel = model.sequelize.models.passenger;
 var journeyModel = model.sequelize.models.journey;
@@ -49,7 +51,7 @@ module.exports = function(req, res) {
                         }
                     }
 //                    res.send(pendingPassengers);
-                    res.render("pendingRequests",{"session" : req.session, "passengers":pendingPassengers})
+                    res.render("pendingRequests",{"session" : req.session, "passengers":pendingPassengers, "moment":moment})
                 }
                 else
                 {
