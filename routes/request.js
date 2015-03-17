@@ -1,7 +1,7 @@
 /**
  * Created by pawan on 15/3/15.
  */
-var url = require('url')
+var url = require('url');
 module.exports = function(req, res) {
 
     if(req.session.userId)

@@ -1,23 +1,25 @@
 extends layout
 block content
     div.col-md-offset-3.col-md-6
-        ul
-        -for city in cities
-            li #{city.id} #{city.name}
-        //TODO Use this to build the following form. Use city id as value and display city name in text
+        -if(success){
+            div.alert.alert-success(role="alert" id="successAlert") #{success}
+        -}
+        -if(error){
+            div.alert.alert-danger(role="alert" id="errorAlert") #{error}
+        -}
 
         form(method='post', action='/search')
             div.form-group
             label(for="from") From
             select.form-control(name='from')
-                -for city in cities
-                    option(value='#{city.id}') #{city.name}
+                -for place in places
+                    option(value='#{place.id}') #{place.name}
             br
             br
             label(for="to") To
             select.form-control(name='to')
-                -for city in cities
-                    option(value='#{city.id}') #{city.name}
+                -for place in places
+                    option(value='#{place.id}') #{place.name}
             br
             br
             button.btn.btn-success(type="submit") Submit

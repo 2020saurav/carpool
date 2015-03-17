@@ -1,5 +1,6 @@
 var model = require('../models/index');
 var moment = require('moment');
+var helper = require('./helper');
 
 var userModel = model.sequelize.models.user;
 var passengerModel = model.sequelize.models.passenger;
@@ -11,10 +12,11 @@ passengerModel.belongsTo(userModel,{foreignKey:"user_id"});
 journeyModel.hasMany(passengerModel, {foreignKey:"journey_id"});
 passengerModel.belongsTo(journeyModel,{foreignKey:"journey_id"});
 
-var PENDING = 0;
-var CONFIRMED = 1;
-var CANCELLED = 2;
-var IGNORED = 3;
+var PENDING = helper.PENDING;
+var CONFIRMED = helper.CONFIRMED;
+var CANCELLED = helper.CANCELLED;
+var IGNORED = helper.IGNORED;
+
 
 module.exports = function(req, res) {
     var userId = req.session.userId;

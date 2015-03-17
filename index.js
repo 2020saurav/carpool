@@ -25,47 +25,47 @@ app.get('/', function (req, res) {
     routes.search(req, res);
 });
 
-app.get('/search', function (req, res) {
+app.get('/search/', function (req, res) {
     routes.search(req, res);
 });
 
-app.post('/search', function (req, res) {
+app.post('/search/', function (req, res) {
     routes.postSearch(req, res);
 });
 
-app.get('/login', function (req, res) {
+app.get('/login/', function (req, res) {
     routes.login(req, res);
 });
 
-app.post('/postLogin', function (req, res) {
+app.post('/postLogin/', function (req, res) {
     routes.postLogin(req, res);
 });
 
-app.get('/register', function (req, res) {
+app.get('/register/', function (req, res) {
     routes.register(req, res);
 });
 
-app.post('/postRegister', function (req, res) {
+app.post('/postRegister/', function (req, res) {
     routes.postRegister(req, res);
 });
 
-app.get('/journey', function (req, res) {
+app.get('/journey/', function (req, res) {
     routes.journey(req, res);
 });
 
-app.post('/postJourney', function (req, res) {
+app.post('/postJourney/', function (req, res) {
     routes.postJourney(req, res);
 });
 
-app.get('/request', function (req, res){
+app.get('/request/', function (req, res){
     routes.request(req, res);
 });
 
-app.post('/postRequest', function (req, res){
+app.post('/postRequest/', function (req, res){
     routes.postRequest(req, res);
 });
 
-app.get('/requests', function (req, res){
+app.get('/requests/', function (req, res){
     routes.pendingRequests(req, res);
 });
 
